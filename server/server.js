@@ -4,15 +4,10 @@ const app = express();
 
 const router = require("./router/auth-router");
 
+// middleware
+app.use(express.json());
+
 app.use("/api/auth", router);
-
-// app.get("/", (req, res) => {
-//     res.status(200).send('welcome to main page');
-// });
-
-// app.get("/register", (req, res) => {
-//     res.status(200).send('welcome to register page');
-// });
 
 const PORT = 5000;
 app.listen(PORT, () => {
