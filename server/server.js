@@ -2,13 +2,17 @@ const express = require("express");
 
 const app = express();
 
-app.get("/", (req, res) => {
-    res.status(200).send('welcome to main page');
-});
+const router = require("./router/auth-router");
 
-app.get("/register", (req, res) => {
-    res.status(200).send('welcome to register page');
-});
+app.use("/api/auth", router);
+
+// app.get("/", (req, res) => {
+//     res.status(200).send('welcome to main page');
+// });
+
+// app.get("/register", (req, res) => {
+//     res.status(200).send('welcome to register page');
+// });
 
 const PORT = 5000;
 app.listen(PORT, () => {
