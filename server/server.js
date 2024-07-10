@@ -4,12 +4,17 @@ const app = express();
 
 const router = require("./router/auth-router");
 
+const connectDb = require("./utils/db");
+
 // middleware
 app.use(express.json());
 
 app.use("/api/auth", router);
 
 const PORT = 5000;
-app.listen(PORT, () => {
-    console.log(`server is running at port: ${PORT}`)
-})
+
+connectDb().then(() => {
+    app.listen(PORT, () => {
+        console.log(`server is running at port: ${PORT}`)
+    })
+});
