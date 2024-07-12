@@ -1,7 +1,6 @@
 const User = require("../models/user-model");
-const bcrypt = require("bcrypt"); 
-// Home Logic
 
+// Home Logic
 const home = async(req, res) => {
     try {
         res.status(200).send('welcome to main page using controllers');
@@ -22,13 +21,9 @@ const register = async(req, res) => {
             return res.status(400).json({ msg: "email already exixts"})
         }
 
-        // hash the password
-        const saltRound = 10;
-        const hash_password = await bcrypt.hash(password, saltRound);
+        const userCreated = await User.create({ username, email, phone, password })
 
-        const userCreated = await User.create({ username, email, phone, password: hash_password })
-
-        res.status(200).json({ message: userCreated})
+        res.status(201).json({ message: userCreated})
     }catch (err) {
         res.status(500).send({msg: "Internal server error"})
     }
