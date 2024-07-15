@@ -1,6 +1,3 @@
-const path = require('path');
-// it adds all the enviornment variables to processe.env
-require('dotenv').config({ path: path.resolve(__dirname, './.env') })
 const mongoose = require("mongoose");
  
 // connection with the DB
