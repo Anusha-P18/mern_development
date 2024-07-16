@@ -10,10 +10,15 @@ const router = require("./router/auth-router");
 
 const connectDb = require("./utils/db");
 
+const errorMiddleware = require("./middlewares/error-middleware");
+
 // middleware
 app.use(express.json());
 
 app.use("/api/auth", router);
+
+// to check if there is any error during initial connection
+app.use(errorMiddleware);
 
 const PORT = 5000;
 
