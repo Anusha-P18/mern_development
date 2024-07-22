@@ -5,6 +5,10 @@
     justify-content: space-between;
 }
 
+img {
+    width: 150px;
+}
+
 ul {
     display: flex;
     gap: 3.2rem;
