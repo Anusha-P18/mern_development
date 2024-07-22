@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 export const Register = () => {
 
@@ -28,6 +28,9 @@ export const Register = () => {
         <section>
             <main>
                 <div className="section-registration">
+                    <div className="registration-content container">
+                        <h1 className="main-heading">Registration Form</h1>
+                    </div>
                     <div className="container grid grid-two-cols">
                         <div className="registration-image">
                             <img
@@ -40,9 +43,6 @@ export const Register = () => {
 
                         {/* registration form */}
                         <div className="registration-form">
-                            <h1 className="main-heading mb-3">Registration Form</h1>
-                            <br />
-
                             <form onSubmit={handleSubmit}>
                                 <div>
                                     <label htmlFor="username">username</label>

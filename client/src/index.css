@@ -27,8 +27,6 @@
     min-height: 100vh;
   }
   
-   /*?  Help me reach 1 Million subs 👉 https://youtube.com/thapatechnical */
-  
   h1 {
     font-size: 5.4rem;
     line-height: 1.1;
@@ -166,3 +164,135 @@
   }
   
   /***** End analytics Section *****/
+
+/** -----------------------
+** contact section css
+** -------------------------  */
+.section-contact {
+    & .contact-content {
+      padding: 0;
+  
+      & h1 {
+        margin-bottom: 3.2rem;
+      }
+    }
+    & .container {
+      padding-top: 3.2rem;
+    }
+    & .contact-img {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      & img {
+        width: 80%;
+        height: auto;
+      }
+    }
+  
+    & .contact-form {
+      & form {
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+      }
+      & label {
+        display: block;
+        margin-bottom: 1.2rem;
+        text-transform: capitalize;
+      }
+  
+      & input,
+      textarea {
+        width: 80%;
+        padding: 0.4rem 0.6rem;
+      }
+    }
+  }
+
+/** -----------------------
+** Registration section css
+** -------------------------  */
+.section-registration {
+    & .registration-content {
+      padding: 0;
+  
+      & h1 {
+        margin-bottom: 3.2rem;
+      }
+    }
+    & .container {
+      padding-top: 3.2rem;
+    }
+    & .registration-image {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      & img {
+        width: 80%;
+        height: auto;
+      }
+    }
+  
+    & .registration-form {
+      & form {
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+      }
+      & label {
+        display: block;
+        margin-bottom: 1.2rem;
+        text-transform: capitalize;
+      }
+  
+      & input,
+      textarea {
+        width: 80%;
+        padding: 0.4rem 0.6rem;
+      }
+    }
+  }
+
+/** -----------------------
+** login section css
+** -------------------------  */
+.section-login {
+    & .login-content {
+      padding: 0;
+  
+      & h1 {
+        margin-bottom: 3.2rem;
+      }
+    }
+    & .container {
+      padding-top: 3.2rem;
+    }
+    & .login-image {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      & img {
+        width: 80%;
+        height: auto;
+      }
+    }
+  
+    & .login-form {
+      & form {
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+      }
+      & label {
+        display: block;
+        margin-bottom: 1.2rem;
+        text-transform: capitalize;
+      }
+  
+      & input,
+      textarea {
+        width: 80%;
+        padding: 0.4rem 0.6rem;
+      }
+    }
+  }

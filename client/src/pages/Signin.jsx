@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 export const Signin = () => {
     const [userLoginDetails, setUserLoginDetails] = useState({
@@ -13,7 +13,7 @@ export const Signin = () => {
 
         setUserLoginDetails({
             ...userLoginDetails,
-            [name]: e.target.value,
+            [name]: value,
         })
     }
 
@@ -26,21 +26,21 @@ export const Signin = () => {
         <section>
             <main>
                 <div className="section-login">
+                    <div className="login-content container">
+                        <h1 className="main-heading">Login Form</h1>
+                    </div>
                     <div className="container grid grid-two-cols">
                         <div className="login-image">
                             <img
                                 src="/images/login.png" 
-                                alt="registration" 
+                                alt="login" 
                                 width="500"
                                 height="500"    
                             />
                         </div>
 
                         {/* login form */}
-                        <div className="registration-form">
-                            <h1 className="main-heading mb-3">Login Form</h1>
-                            <br />
-
+                        <div className="login-form">
                             <form onSubmit={handleSubmit}>
                                 <div>
                                     <label htmlFor="email">email</label>
