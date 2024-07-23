@@ -50,7 +50,7 @@ const login = async(req, res) => {
         }
 
         // const passwordExist = await bcrypt.compare(password, userExist.password);
-        const passwordExist = await userExist.comparePassword(password)
+        const passwordExist = await userExist.comparePassword(password);
 
         if (passwordExist) {
             res.status(200).json({ 
