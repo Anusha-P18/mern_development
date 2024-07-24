@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../store/auth";
 
 export const Signin = () => {
     const [userLoginDetails, setUserLoginDetails] = useState({
@@ -8,6 +9,7 @@ export const Signin = () => {
 
     });
     const navigate = useNavigate();
+    const { storeTokenInLS } = useAuth();
 
     const handleInput = (e) => {
         const name = e.target.name;
@@ -36,7 +38,11 @@ export const Signin = () => {
             console.log(response);
 
             if(response.ok) {
-                alert("Login Successfull")
+                alert("Login Successfull");
+
+                const res_data = await response.json();
+                storeTokenInLS(res_data.token);
+
                 setUserLoginDetails({
                     email: "",
                     password: ""
