@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
 
@@ -46,10 +47,11 @@ export const Register = () => {
                     email:"",
                     phone: "",
                     password: "",
-                })
+                });
+                toast.success("Registration Successful");
                 navigate("/login");
             } else {
-                alert(res_data.extraDetails ? res_data.extraDetails : res_data.message);
+                toast.error(res_data.extraDetails ? res_data.extraDetails : res_data.message);
             }
         } catch (err) {
             console.log('Registration error', err);

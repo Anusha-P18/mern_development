@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
 
@@ -38,16 +39,16 @@ export const Signin = () => {
             const res_data = await response.json();
 
             if(response.ok) {
-                alert("Login Successfull");
                 storeTokenInLS(res_data.token);
 
                 setUserLoginDetails({
                     email: "",
                     password: ""
-                })
+                });
+                toast.success("Login Successful");
                 navigate("/");
             } else {
-                alert(res_data.extraDetails ? res_data.extraDetails : res_data.message);
+                toast.error(res_data.extraDetails ? res_data.extraDetails : res_data.message);
             }
         } catch (err) {
             console.log('Login error', err);
