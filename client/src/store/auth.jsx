@@ -9,6 +9,8 @@ export const AuthProvider = ({children}) => {
     const [services, setServices] = useState("");
 
     const storeTokenInLS = (serverToken) => {
+        // To set token on login so that page refresh is not required
+        setToken(serverToken);
         return localStorage.setItem("token", serverToken);
     };
 
