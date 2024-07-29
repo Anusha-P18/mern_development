@@ -35,12 +35,10 @@ export const Signin = () => {
                 body:JSON.stringify(userLoginDetails)
             });
     
-            console.log(response);
+            const res_data = await response.json();
 
             if(response.ok) {
                 alert("Login Successfull");
-
-                const res_data = await response.json();
                 storeTokenInLS(res_data.token);
 
                 setUserLoginDetails({
@@ -48,9 +46,10 @@ export const Signin = () => {
                     password: ""
                 })
                 navigate("/");
+            } else {
+                alert(res_data.extraDetails ? res_data.extraDetails : res_data.message);
             }
         } catch (err) {
-            alert("Invalid Credential")
             console.log('Login error', err);
         }
     }
